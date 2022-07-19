@@ -5,16 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SnakeLadderSimulator
-{   //class to check option
-    public class CheckOption
-    {   //method to check for an option and move the token accordingly
-        public void CheckPlayOption(int option, int dieRoll)
+{   
+    public class ReturnPosition
+    {
+        //Method to match option, move token accordingly and return current position
+        public int ReturnCurrentPosition(int option, int dieRoll, int position)
         {
-            int position = 0;
-
+            //Selection statement to select option and change position accordingly
             switch (option)
             {
-                case 1: //No play
+                case 1: //No Play
                     Console.WriteLine("Option : No Play");
                     position = position;
                     Console.WriteLine("Your Current Position : " + position);
@@ -27,9 +27,12 @@ namespace SnakeLadderSimulator
                 default: //Snake
                     Console.WriteLine("Option : Snake");
                     position -= dieRoll;
+                    if (position < 0) //if position becomes less than 0, player restarts from START i.e 0
+                    { position = 0; }
                     Console.WriteLine("Your Current Position : " + position);
                     break;
             }
+            return position;
 
         }
     }
