@@ -8,10 +8,11 @@ namespace SnakeLadderSimulator
 {   
     public class ReturnPosition
     {
-        //Method to match option, move token accordingly and return current position
+        //Method to match option, move token position and return current position
         public int ReturnCurrentPosition(int option, int dieRollNum, int position)
 
-        {   //Selection statement to select option and change position accordingly
+        {
+            //Selection statement to select option and change position accordingly
             switch (option)
             {
                 case 1: //For Option : No Play
